@@ -1,4 +1,9 @@
-export class Product {
+export interface DiscountableProduct {
+  discount: number
+  applyDiscount(): string;
+}
+
+export abstract class Product {
   sku: string;
   name: string;
   price: number;
@@ -14,6 +19,6 @@ export class Product {
   };
 
   getPriceWithTax = (): string => {
-    return $;
+    return `$${this.price}`;
   };
 }
